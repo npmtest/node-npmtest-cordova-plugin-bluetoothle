@@ -1,5 +1,5 @@
 <html lang="en"><head>
-    <title>Code coverage report for node-npmtest-cordova-plugin-bluetoothle/node_modules/cordova-plugin-bluetoothle/www/bluetoothle.js</title>
+    <title>Code coverage report for node-npmtest-cordova-plugin-bluetoothle/node_modules/cordova-plugin-bluetoothle/src/windows/BluetoothLePlugin.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,23 +192,23 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-cordova-plugin-bluetoothle">npmtest-cordova-plugin-bluetoothle (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-cordova-plugin-bluetoothle/node_modules/cordova-plugin-bluetoothle/www/bluetoothle.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-cordova-plugin-bluetoothle/node_modules/cordova-plugin-bluetoothle/src/windows/BluetoothLePlugin.js</span></h1>
     <h2>
         
-        Statements: <span class="metric">4.62% <small>(3 / 65)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">2.18% <small>(9 / 412)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 247)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Functions: <span class="metric">0% <small>(0 / 51)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 81)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Lines: <span class="metric">4.62% <small>(3 / 65)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">2.19% <small>(9 / 411)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-cordova-plugin-bluetoothle/node_modules/cordova-plugin-bluetoothle/www/</a> » bluetoothle.js</div>
+    <div class="path"><a href="../../../../../index.html">All files</a> » <a href="index.html">node-npmtest-cordova-plugin-bluetoothle/node_modules/cordova-plugin-bluetoothle/src/windows/</a> » BluetoothLePlugin.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
@@ -397,8 +397,1330 @@
 183
 184
 185
-186</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821
+822
+823
+824
+825
+826
+827
+828
+829
+830
+831
+832
+833
+834
+835
+836
+837
+838
+839
+840
+841
+842
+843
+844
+845
+846
+847
+848
+849
+850
+851
+852
+853
+854
+855
+856
+857
+858
+859
+860
+861
+862
+863
+864
+865
+866
+867
+868
+869
+870
+871
+872
+873
+874
+875
+876
+877
+878
+879
+880
+881
+882
+883
+884
+885
+886
+887
+888
+889
+890
+891
+892
+893
+894
+895
+896
+897
+898
+899
+900
+901
+902
+903
+904
+905
+906
+907
+908
+909
+910
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920
+921
+922
+923
+924
+925
+926
+927
+928
+929
+930
+931
+932
+933
+934
+935
+936
+937
+938
+939
+940
+941
+942
+943
+944
+945
+946
+947
+948
+949
+950
+951
+952
+953
+954
+955
+956
+957
+958
+959
+960
+961
+962
+963
+964
+965
+966
+967
+968
+969
+970
+971
+972
+973
+974
+975
+976
+977
+978
+979
+980
+981
+982
+983
+984
+985
+986
+987
+988
+989
+990
+991
+992
+993
+994
+995
+996
+997
+998
+999
+1000
+1001
+1002
+1003
+1004
+1005
+1006
+1007
+1008
+1009
+1010
+1011
+1012
+1013
+1014
+1015
+1016
+1017
+1018
+1019
+1020
+1021
+1022
+1023
+1024
+1025
+1026
+1027
+1028
+1029
+1030
+1031
+1032
+1033
+1034
+1035
+1036
+1037
+1038
+1039
+1040
+1041
+1042
+1043
+1044
+1045
+1046
+1047
+1048
+1049
+1050
+1051
+1052
+1053
+1054
+1055
+1056
+1057
+1058
+1059
+1060
+1061
+1062
+1063
+1064
+1065
+1066
+1067
+1068</td><td class="line-coverage"><span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -415,6 +1737,31 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -430,29 +1777,23 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -466,35 +1807,30 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -508,48 +1844,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -562,216 +1870,1554 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var bluetoothleName = "BluetoothLePlugin";
-var bluetoothle = {
-  initialize: <span class="fstat-no" title="function not covered">function(successCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, successCallback, bluetoothleName, "initialize", [params]);</span>
-  },
-  enable: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "enable", []);</span>
-  },
-  disable: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "disable", []);</span>
-  },
-  startScan: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "startScan", [params]);</span>
-  },
-  stopScan: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "stopScan", []);</span>
-  },
-  retrieveConnected: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "retrieveConnected", [params]);</span>
-  },
-  bond: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "bond", [params]);</span>
-  },
-  unbond: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "unbond", [params]);</span>
-  },
-  connect: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "connect", [params]);</span>
-  },
-  reconnect: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "reconnect", [params]);</span>
-  },
-  disconnect: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "disconnect", [params]);</span>
-  },
-  close: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "close", [params]);</span>
-  },
-  discover: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "discover", [params]);</span>
-  },
-  services: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "services", [params]);</span>
-  },
-  characteristics: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "characteristics", [params]);</span>
-  },
-  descriptors: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "descriptors", [params]);</span>
-  },
-  read: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "read", [params]);</span>
-  },
-  subscribe: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "subscribe", [params]);</span>
-  },
-  unsubscribe: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "unsubscribe", [params]);</span>
-  },
-  write: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "write", [params]);</span>
-  },
-  writeQ: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "writeQ", [params]);</span>
-  },
-  readDescriptor: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "readDescriptor", [params]);</span>
-  },
-  writeDescriptor: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "writeDescriptor", [params]);</span>
-  },
-  rssi: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "rssi", [params]);</span>
-  },
-  mtu: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "mtu", [params]);</span>
-  },
-  requestConnectionPriority: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "requestConnectionPriority", [params]);</span>
-  },
-  isInitialized: <span class="fstat-no" title="function not covered">function(successCallback) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, successCallback, bluetoothleName, "isInitialized", []);</span>
-  },
-  isEnabled: <span class="fstat-no" title="function not covered">function(successCallback) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, successCallback, bluetoothleName, "isEnabled", []);</span>
-  },
-  isScanning: <span class="fstat-no" title="function not covered">function(successCallback) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, successCallback, bluetoothleName, "isScanning", []);</span>
-  },
-  isBonded: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "isBonded", [params]);</span>
-  },
-  wasConnected: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "wasConnected", [params]);</span>
-  },
-  isConnected: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "isConnected", [params]);</span>
-  },
-  isDiscovered: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "isDiscovered", [params]);</span>
-  },
-  hasPermission: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "hasPermission", []);</span>
-  },
-  requestPermission: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "requestPermission", []);</span>
-  },
-  isLocationEnabled: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "isLocationEnabled", []);</span>
-  },
-  requestLocation: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "requestLocation", []);</span>
-  },
-  initializePeripheral: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "initializePeripheral", [params]);</span>
-  },
-  addService: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "addService", [params]);</span>
-  },
-  removeService: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "removeService", [params]);</span>
-  },
-  removeAllServices: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "removeAllServices", [params]);</span>
-  },
-  startAdvertising: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "startAdvertising", [params]);</span>
-  },
-  stopAdvertising: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "stopAdvertising", [params]);</span>
-  },
-  isAdvertising: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "isAdvertising", []);</span>
-  },
-  respond: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "respond", [params]);</span>
-  },
-  notify: <span class="fstat-no" title="function not covered">function(successCallback, errorCallback, params) {</span>
-<span class="cstat-no" title="statement not covered">    cordova.exec(successCallback, errorCallback, bluetoothleName, "notify", [params]);</span>
-  },
-  encodedStringToBytes: <span class="fstat-no" title="function not covered">function(string) {</span>
-<span class="cstat-no" title="statement not covered">    var data = atob(string);</span>
-<span class="cstat-no" title="statement not covered">    var bytes = new Uint8Array(data.length);</span>
-<span class="cstat-no" title="statement not covered">    for (var i = 0; i &lt; bytes.length; i++)</span>
-    {
-<span class="cstat-no" title="statement not covered">      bytes[i] = data.charCodeAt(i);</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var bluetooth = Windows.Devices.Bluetooth;
+<span class="cstat-no" title="statement not covered">var gatt = Windows.Devices.Bluetooth.GenericAttributeProfile;</span>
+<span class="cstat-no" title="statement not covered">var deviceInfo = Windows.Devices.Enumeration.DeviceInformation;</span>
+<span class="cstat-no" title="statement not covered">var wsc = Windows.Security.Cryptography;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">var WATCHER, scanCallback;</span>
+<span class="cstat-no" title="statement not covered">var WATCH_CACHE = {};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">var initialized = false;</span>
+<span class="cstat-no" title="statement not covered">var cachedServices = [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">module.exports = {</span>
+&nbsp;
+  initialize: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+&nbsp;
+    // If Windows.Devices.Radios namespace is available we will try to use it for
+    // initialization. Otherwise fall back to default behaviour which is to
+    // search for all Gatt-enabled devices around. See randdusing/cordova-plugin-bluetoothle/#284
+<span class="cstat-no" title="statement not covered">    if (Windows.Devices.Radios) {</span>
+<span class="cstat-no" title="statement not covered">      return module.exports.initialize2(successCallback, errorCallback, params);</span>
     }
-<span class="cstat-no" title="statement not covered">    return bytes;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    var selector = "System.Devices.InterfaceClassGuid:=\"{6E3BB679-4372-40C8-9EAA-4509DF260CD8}\" AND System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True";</span>
+<span class="cstat-no" title="statement not covered">    deviceInfo.findAllAsync(selector, null).then(<span class="fstat-no" title="function not covered">function (devices) {</span></span>
+<span class="cstat-no" title="statement not covered">      if (devices.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">        initialized = true;</span>
+<span class="cstat-no" title="statement not covered">        successCallback({ status: "enabled" });</span>
+      } else {
+<span class="cstat-no" title="statement not covered">        if (params &amp;&amp; params.length &gt; 0 &amp;&amp; params[0].request) {</span>
+<span class="cstat-no" title="statement not covered">          try {</span>
+<span class="cstat-no" title="statement not covered">            Windows.UI.ApplicationSettings.SettingsPane.show();</span>
+          } catch (ex) {
+<span class="cstat-no" title="statement not covered">            Windows.System.Launcher.launchUriAsync(Windows.Foundation.Uri("ms-settings-bluetooth:"));</span>
+          }
+        }
+<span class="cstat-no" title="statement not covered">        errorCallback({ error: "initialize", message: "No BLE devices found." });</span>
+      }
+    }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">      if (params &amp;&amp; params.length &gt; 0 &amp;&amp; params[0].request) {</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">          Windows.UI.ApplicationSettings.SettingsPane.show();</span>
+        } catch (ex) {
+<span class="cstat-no" title="statement not covered">          Windows.System.Launcher.launchUriAsync(Windows.Foundation.Uri("ms-settings-bluetooth:"));</span>
+        }
+      }
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "initialize", message: error.message });</span>
+    });
   },
-  bytesToEncodedString: <span class="fstat-no" title="function not covered">function(bytes) {</span>
-<span class="cstat-no" title="statement not covered">    return btoa(String.fromCharCode.apply(null, bytes));</span>
-  },
-  stringToBytes: <span class="fstat-no" title="function not covered">function(string) {</span>
-<span class="cstat-no" title="statement not covered">    var bytes = new ArrayBuffer(string.length * 2);</span>
-<span class="cstat-no" title="statement not covered">    var bytesUint16 = new Uint16Array(bytes);</span>
-<span class="cstat-no" title="statement not covered">    for (var i = 0; i &lt; string.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">      bytesUint16[i] = string.charCodeAt(i);</span>
+&nbsp;
+  initialize2: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    var Radios = Windows.Devices.Radios;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    var request = params[0] ? !!params[0].request : false;</span>
+<span class="cstat-no" title="statement not covered">    var statusReceiver = params[0] ? !!params[0].statusReceiver : false;</span>
+&nbsp;
+    // If statusReceiver option is specified we would report state multiple
+    // times so we need to instruct cordova not to dispose callbacks
+<span class="cstat-no" title="statement not covered">    var callbackOptions = statusReceiver ? { keepCallback: true } : {};</span>
+&nbsp;
+<span class="fstat-no" title="function not covered">    function reportAdapterState(e) {</span>
+<span class="cstat-no" title="statement not covered">      var state;</span>
+<span class="cstat-no" title="statement not covered">      switch (e.target.state) {</span>
+        case Radios.RadioState.on:
+<span class="cstat-no" title="statement not covered">          initialized = true;</span>
+<span class="cstat-no" title="statement not covered">          state = 'enabled';</span>
+<span class="cstat-no" title="statement not covered">          break;</span>
+        default:
+<span class="cstat-no" title="statement not covered">          initialized = false;</span>
+<span class="cstat-no" title="statement not covered">          state = 'disabled';</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered">      successCallback({ status: state }, callbackOptions);</span>
     }
-<span class="cstat-no" title="statement not covered">    return new Uint8Array(bytesUint16);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    Radios.Radio.getRadiosAsync()</span>
+    .then(<span class="fstat-no" title="function not covered">function (radios) {</span>
+      // There is a very small chance that there are more than one bluetooth
+      // radio device is available so we'll just pick the first one from the list
+<span class="cstat-no" title="statement not covered">      var radio = radios.filter(<span class="fstat-no" title="function not covered">function (radio) {</span></span>
+<span class="cstat-no" title="statement not covered">        return radio.kind === Radios.RadioKind.bluetooth;</span>
+      })[0];
+&nbsp;
+<span class="cstat-no" title="statement not covered">      if (!radio) {</span>
+<span class="cstat-no" title="statement not covered">        throw { error: "initialize", message: "No bluetooth radios available on device" };</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered">      if (statusReceiver) {</span>
+<span class="cstat-no" title="statement not covered">        radio.addEventListener('statechanged', reportAdapterState);</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered">      reportAdapterState({ target: radio });</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      if (radio.state !== Radios.RadioState.on &amp;&amp; request) {</span>
+        // radio.setStateAsync(Windows.Devices.Radios.RadioState.on) doesn't
+        // work somehow so try to invoke settings in an old way.
+<span class="cstat-no" title="statement not covered">        Windows.System.Launcher.launchUriAsync(Windows.Foundation.Uri("ms-settings-bluetooth:"));</span>
+      }
+    })
+    .done(null, errorCallback);
   },
-  bytesToString: <span class="fstat-no" title="function not covered">function(bytes) {</span>
-<span class="cstat-no" title="statement not covered">    return String.fromCharCode.apply(null, new Uint16Array(bytes));</span>
-  },
-  bytesToHex: <span class="fstat-no" title="function not covered">function(bytes) {</span>
-<span class="cstat-no" title="statement not covered">    var string = [];</span>
-<span class="cstat-no" title="statement not covered">    for (var i = 0; i &lt; bytes.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">      string.push("0x" + ("0"+(bytes[i].toString(16))).substr(-2).toUpperCase());</span>
+&nbsp;
+  retrieveConnected: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+<span class="cstat-no" title="statement not covered">    if (!initialized) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "retrieveConnected", message: "Not initialized." });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
     }
-<span class="cstat-no" title="statement not covered">    return string.join(" ");</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    var services;</span>
+<span class="cstat-no" title="statement not covered">    var searchServices;</span>
+<span class="cstat-no" title="statement not covered">    var deviceIdsFound = [];</span>
+<span class="cstat-no" title="statement not covered">    var result = [];</span>
+<span class="cstat-no" title="statement not covered">    var selector = "System.Devices.InterfaceClassGuid:=\"{6E3BB679-4372-40C8-9EAA-4509DF260CD8}\" AND System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True";</span>
+<span class="cstat-no" title="statement not covered">    if (params[0].services &amp;&amp; params[0].services.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">      for (var i = 0; i &lt; params[0].services.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">        var uuid = params[0].services[i];</span>
+<span class="cstat-no" title="statement not covered">        if (uuid.length == 4) {</span>
+<span class="cstat-no" title="statement not covered">            uuid = "0000" + uuid + "-0000-1000-8000-00805F9B34FB";</span>
+        }
+<span class="cstat-no" title="statement not covered">        selector += (i == 0) ? " AND ( " : " OR ";</span>
+<span class="cstat-no" title="statement not covered">        selector += "System.DeviceInterface.Bluetooth.ServiceGuid:=\"{" + uuid + "}\"";</span>
+      }
+<span class="cstat-no" title="statement not covered">      selector += " )";</span>
+    }
+<span class="cstat-no" title="statement not covered">    deviceInfo.findAllAsync(selector, ["System.Devices.ContainerId"]).then(<span class="fstat-no" title="function not covered">function (devices) {</span></span>
+<span class="cstat-no" title="statement not covered">      for (var i = 0; i &lt; devices.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">        var deviceId = devices[i].properties["System.Devices.ContainerId"];</span>
+<span class="cstat-no" title="statement not covered">        var deviceName = devices[i].name;</span>
+<span class="cstat-no" title="statement not covered">        if (deviceIdsFound.indexOf(deviceId) == -1) {</span>
+<span class="cstat-no" title="statement not covered">          deviceIdsFound.push(deviceId);</span>
+<span class="cstat-no" title="statement not covered">          result.push({ name: deviceName, address: deviceId });</span>
+        }
+      }
+<span class="cstat-no" title="statement not covered">      successCallback(result);</span>
+    }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "retrieveConnected", message: error.message });</span>
+    });
   },
-  SCAN_MODE_OPPORTUNISTIC: -1,
-  SCAN_MODE_LOW_POWER: 0,
-  SCAN_MODE_BALANCED: 1,
-  SCAN_MODE_LOW_LATENCY: 2,
-  MATCH_NUM_ONE_ADVERTISEMENT: 1,
-  MATCH_NUM_FEW_ADVERTISEMENT: 2,
-  MATCH_NUM_MAX_ADVERTISEMENT: 3,
-  MATCH_MODE_AGGRESSIVE: 1,
-  MATCH_MODE_STICKY: 2,
-  CALLBACK_TYPE_ALL_MATCHES: 1,
-  CALLBACK_TYPE_FIRST_MATCH: 2,
-  CALLBACK_TYPE_MATCH_LOST: 4,
+&nbsp;
+  startScan: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    var DeviceInformation = Windows.Devices.Enumeration.DeviceInformation;</span>
+<span class="cstat-no" title="statement not covered">    var DeviceWatcherStatus = Windows.Devices.Enumeration.DeviceWatcherStatus;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    var NAME_KEY = "System.ItemNameDisplay";</span>
+<span class="cstat-no" title="statement not covered">    var RSSI_KEY = "System.Devices.Aep.SignalStrength";</span>
+<span class="cstat-no" title="statement not covered">    var CONTAINER_ID_KEY = "System.Devices.Aep.ContainerId";</span>
+&nbsp;
+    // Drop cache first
+<span class="cstat-no" title="statement not covered">    WATCH_CACHE = {};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (!WATCHER) {</span>
+      // watch BLE devices using device watcher.
+<span class="cstat-no" title="statement not covered">      var selector = Windows.Devices.Bluetooth.BluetoothLEDevice.getDeviceSelectorFromConnectionStatus(false);</span>
+<span class="cstat-no" title="statement not covered">      WATCHER = DeviceInformation.createWatcher(selector, [NAME_KEY, RSSI_KEY, CONTAINER_ID_KEY]);</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (WATCHER.status !== DeviceWatcherStatus.started &amp;&amp;</span>
+      WATCHER.status !== DeviceWatcherStatus.created &amp;&amp;
+      WATCHER.status !== DeviceWatcherStatus.aborted) {
+&nbsp;
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "startScan", message: 'Scan already in progress' });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    scanCallback = <span class="fstat-no" title="function not covered">function (obj) {</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      if (obj.type !== 'added')</span>
+        // We're not interested in device characteristics updates
+        // unless continuousScan === true (which is not yet supported)
+<span class="cstat-no" title="statement not covered">        return;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      var device = obj.detail[0];</span>
+&nbsp;
+      // TODO: Add "advertisement" property - it is not available directly
+      // but probably could be obtained using GattDeviceService
+<span class="cstat-no" title="statement not covered">      var deviceAddress = device.properties.hasKey(CONTAINER_ID_KEY) &amp;&amp; device.properties.lookup(CONTAINER_ID_KEY);</span>
+      // Put device into cache to be able to get it faster in 'connect'
+<span class="cstat-no" title="statement not covered">      WATCH_CACHE[deviceAddress] = device;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      var deviceInfo = {</span>
+        status: 'scanResult',
+        rssi: device.properties.hasKey(RSSI_KEY) &amp;&amp; device.properties.lookup(RSSI_KEY),
+        name: device.properties.hasKey(NAME_KEY) &amp;&amp; device.properties.lookup(NAME_KEY),
+        address: deviceAddress
+      };
+&nbsp;
+<span class="cstat-no" title="statement not covered">      successCallback(deviceInfo, { keepCallback: true });</span>
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered">    WATCHER.addEventListener("added", scanCallback, false);</span>
+    // Although we're not interested in device characteristics updated we still need to attach
+    // listener to 'updated' event to catch devices that could be found after the initial scan is completed
+<span class="cstat-no" title="statement not covered">    WATCHER.addEventListener("updated", scanCallback, false);</span>
+<span class="cstat-no" title="statement not covered">    WATCHER.start();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    successCallback({ status: 'scanStarted' }, { keepCallback: true });</span>
+  },
+&nbsp;
+  stopScan: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback) {</span>
+<span class="cstat-no" title="statement not covered">    var DeviceWatcherStatus = Windows.Devices.Enumeration.DeviceWatcherStatus;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (WATCHER &amp;&amp; (WATCHER.status === DeviceWatcherStatus.started ||</span>
+      WATCHER.status === DeviceWatcherStatus.enumerationCompleted)) {
+&nbsp;
+<span class="cstat-no" title="statement not covered">      WATCHER.stop();</span>
+<span class="cstat-no" title="statement not covered">      WATCHER.removeEventListener("added", scanCallback);</span>
+<span class="cstat-no" title="statement not covered">      WATCHER.removeEventListener("updated", scanCallback);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      successCallback({ status: "scanStopped" });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    errorCallback({ error: "stopScan", message: "Scan is either not yet started or already stopped" });</span>
+  },
+&nbsp;
+  connect: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+<span class="cstat-no" title="statement not covered">    if (!initialized) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "connect", message: "Not initialized." });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    var address = params &amp;&amp; params[0] &amp;&amp; params[0].address;</span>
+<span class="cstat-no" title="statement not covered">    if (!address) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "connect", message: "Device address is not specified" });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    var DeviceInformation = Windows.Devices.Enumeration.DeviceInformation;</span>
+<span class="cstat-no" title="statement not covered">    var DeviceInformationKind = Windows.Devices.Enumeration.DeviceInformationKind;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    WinJS.Promise.wrap(address)</span>
+    .then(<span class="fstat-no" title="function not covered">function (deviceAddress) {</span>
+      // If we have cached device info return it right now
+<span class="cstat-no" title="statement not covered">      if (WATCH_CACHE[deviceAddress]) <span class="cstat-no" title="statement not covered">return [WATCH_CACHE[deviceAddress]];</span></span>
+      // Otherwise try to search it again
+<span class="cstat-no" title="statement not covered">      var selector = "System.Devices.Aep.ProtocolId:=\"{bb7bb05e-5972-42b5-94fc-76eaa7084d49}\" AND " +</span>
+                      "System.Devices.Aep.ContainerId:=\"{" + deviceAddress + "}\" AND " +
+                      "(System.Devices.Aep.CanPair:=System.StructuredQueryType.Boolean#True OR " +
+                      "System.Devices.Aep.IsPaired:=System.StructuredQueryType.Boolean#True)";
+<span class="cstat-no" title="statement not covered">      return DeviceInformation.findAllAsync(selector, ["System.Devices.Aep.ContainerId"], DeviceInformationKind.associationEndpoint);</span>
+    })
+    .then(<span class="fstat-no" title="function not covered">function (devices) {</span>
+<span class="cstat-no" title="statement not covered">      return Windows.Devices.Bluetooth.BluetoothLEDevice.fromIdAsync(devices[0].id);</span>
+    })
+    .then(<span class="fstat-no" title="function not covered">function (bleDevice) {</span>
+<span class="cstat-no" title="statement not covered">      var DevicePairingProtectionLevel = Windows.Devices.Enumeration.DevicePairingProtectionLevel;</span>
+<span class="cstat-no" title="statement not covered">      var DevicePairingResultStatus = Windows.Devices.Enumeration.DevicePairingResultStatus;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      if (bleDevice.deviceInformation.pairing.isPaired) {</span>
+<span class="cstat-no" title="statement not covered">        return bleDevice;</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered">      if (!bleDevice.deviceInformation.pairing.canPair) {</span>
+<span class="cstat-no" title="statement not covered">        throw { error: "connect", message: "The device does not support pairing" };</span>
+      }
+&nbsp;
+      // TODO: investigate if it is possible to pair without user prompt
+<span class="cstat-no" title="statement not covered">      return bleDevice.deviceInformation.pairing.pairAsync(DevicePairingProtectionLevel.none)</span>
+      .then(<span class="fstat-no" title="function not covered">function (res) {</span>
+<span class="cstat-no" title="statement not covered">        if (res.status === DevicePairingResultStatus.paired ||</span>
+            res.status === DevicePairingResultStatus.alreadyPaired)
+<span class="cstat-no" title="statement not covered">          return bleDevice;</span>
+&nbsp;
+        // TODO: provide error code based on DevicePairingResultStatus.alreadyPaired enum
+<span class="cstat-no" title="statement not covered">        throw { error: "connect", message: "The device rejected the connection" };</span>
+      });
+    })
+    .done(<span class="fstat-no" title="function not covered">function (bleDevice) {</span>
+<span class="cstat-no" title="statement not covered">      var result = {</span>
+        name: bleDevice.deviceInformation.name,
+        address: address,
+        status: "connected"
+      };
+&nbsp;
+      // Attach listener to device to report disconnected event
+<span class="cstat-no" title="statement not covered">      bleDevice.addEventListener('connectionstatuschanged', <span class="fstat-no" title="function not covered">function connectionStatusListener(e) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (e.target.connectionStatus === Windows.Devices.Bluetooth.BluetoothConnectionStatus.disconnected) {</span>
+<span class="cstat-no" title="statement not covered">          result.status = "disconnected";</span>
+<span class="cstat-no" title="statement not covered">          successCallback(result);</span>
+<span class="cstat-no" title="statement not covered">          bleDevice.removeEventListener('connectionstatuschanged', connectionStatusListener);</span>
+        }
+      });
+&nbsp;
+      // Need to use keepCallback to be able to report "disconnect" event
+      // https://github.com/randdusing/cordova-plugin-bluetoothle#connect
+<span class="cstat-no" title="statement not covered">      successCallback(result, { keepCallback: true });</span>
+    }, <span class="fstat-no" title="function not covered">function (err) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback(err);</span>
+    });
+  },
+&nbsp;
+  close: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+<span class="cstat-no" title="statement not covered">    if (!initialized) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "close", message: "Not initialized." });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (params &amp;&amp; params.length &gt; 0 &amp;&amp; params[0].address) {</span>
+<span class="cstat-no" title="statement not covered">      var deviceId = params[0].address;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      for (var i = 0; i &lt; cachedServices.length;) {</span>
+<span class="cstat-no" title="statement not covered">        var service = cachedServices[i];</span>
+<span class="cstat-no" title="statement not covered">        if (service.deviceId == deviceId) {</span>
+<span class="cstat-no" title="statement not covered">          cachedServices.splice(i, 1);</span>
+<span class="cstat-no" title="statement not covered">          service.deviceService.close();</span>
+        } else {
+<span class="cstat-no" title="statement not covered">          i++;</span>
+        }
+      }
+    }
+  },
+&nbsp;
+  services: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+<span class="cstat-no" title="statement not covered">    if (!initialized) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "services", message: "Not initialized." });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (params &amp;&amp; params.length &gt; 0 &amp;&amp; params[0].address) {</span>
+<span class="cstat-no" title="statement not covered">      var deviceId = params[0].address;</span>
+<span class="cstat-no" title="statement not covered">      var selector = "System.Devices.ContainerId:={" + deviceId + "} AND System.Devices.InterfaceClassGuid:=\"{6E3BB679-4372-40C8-9EAA-4509DF260CD8}\" AND System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True";</span>
+<span class="cstat-no" title="statement not covered">      deviceInfo.findAllAsync(selector, null).then(<span class="fstat-no" title="function not covered">function (services) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (services.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">          var deviceName;</span>
+<span class="cstat-no" title="statement not covered">          var serviceIds = [];</span>
+<span class="cstat-no" title="statement not covered">          for (var i = 0; i &lt; services.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">              var UuidRe = /\{([0-9a-f]{8}\-[0-9a-f]{4}\-[0-9a-f]{4}\-[0-9a-f]{4}\-[0-9a-f]{12})\}_/;</span>
+<span class="cstat-no" title="statement not covered">              var serviceId = UuidRe.exec(services[i].id)[1];</span>
+<span class="cstat-no" title="statement not covered">              var re = /0000([0-9a-f]{4})\-0000\-1000\-8000\-00805f9b34fb/;</span>
+<span class="cstat-no" title="statement not covered">              var shortUuidMatch = re.exec(serviceId);</span>
+<span class="cstat-no" title="statement not covered">              if (shortUuidMatch != null) {</span>
+<span class="cstat-no" title="statement not covered">                serviceId = shortUuidMatch[1];</span>
+              }
+<span class="cstat-no" title="statement not covered">              serviceIds.push(serviceId);</span>
+<span class="cstat-no" title="statement not covered">              deviceName = services[i].name;</span>
+          }
+<span class="cstat-no" title="statement not covered">          successCallback({ status: "services", services: serviceIds, name: deviceName, address: deviceId });</span>
+        } else {
+<span class="cstat-no" title="statement not covered">          errorCallback({ error: "services", message: "Device not found." });</span>
+        }
+      }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">        errorCallback({ error: "services", message: error.message });</span>
+      });
+    } else {
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "services", message: "Invalid parameters." });</span>
+    }
+  },
+&nbsp;
+  characteristics: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+<span class="cstat-no" title="statement not covered">    if (!initialized) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "characteristics", message: "Not initialized." });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (params &amp;&amp; params.length &gt; 0 &amp;&amp; params[0].address &amp;&amp; params[0].service) {</span>
+<span class="cstat-no" title="statement not covered">      var deviceId = params[0].address;</span>
+<span class="cstat-no" title="statement not covered">      var serviceId = params[0].service;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      getService(deviceId, serviceId).then(<span class="fstat-no" title="function not covered">function (service) {</span></span>
+<span class="cstat-no" title="statement not covered">        var characteristicsResult = [];</span>
+<span class="cstat-no" title="statement not covered">        if (service.getAllCharacteristics) { // Phone</span>
+<span class="cstat-no" title="statement not covered">          var characteristics = service.getAllCharacteristics();</span>
+<span class="cstat-no" title="statement not covered">          for (var i = 0; i &lt; characteristics.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">            characteristicsResult.push(convertCharacteristic(characteristics[i]));</span>
+          }
+        } else { // Client
+<span class="cstat-no" title="statement not covered">          var serviceInfo = getServiceInfo(serviceId);</span>
+<span class="cstat-no" title="statement not covered">          if (serviceInfo) {</span>
+<span class="cstat-no" title="statement not covered">            for (var i = 0; i &lt; serviceInfo.characteristics.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">              var characteristicInfo = serviceInfo.characteristics[i];</span>
+<span class="cstat-no" title="statement not covered">              var characteristic = service.getCharacteristics(gatt.GattCharacteristic.convertShortIdToUuid(characteristicInfo.uuid))[0];</span>
+<span class="cstat-no" title="statement not covered">              if (characteristic) {</span>
+<span class="cstat-no" title="statement not covered">                characteristicsResult.push(convertCharacteristic(characteristic));</span>
+              }
+            }
+          } else {
+<span class="cstat-no" title="statement not covered">            errorCallback({ error: "characteristics", message: "Unknown service, add the service to getServiceInfos() and try again." });</span>
+          }
+        }
+<span class="cstat-no" title="statement not covered">        successCallback({ status: "characteristics", characteristics: characteristicsResult, name: service.name, service: serviceId, address: deviceId });</span>
+      }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">        errorCallback({ error: "characteristics", message: error });</span>
+      });
+    } else {
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "characteristics", message: "Invalid parameters." });</span>
+    }
+  },
+&nbsp;
+  descriptors: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+<span class="cstat-no" title="statement not covered">    if (!initialized) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "descriptors", message: "Not initialized." });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (params &amp;&amp; params.length &gt; 0 &amp;&amp; params[0].address &amp;&amp; params[0].service &amp;&amp; params[0].characteristic) {</span>
+<span class="cstat-no" title="statement not covered">      var deviceId = params[0].address;</span>
+<span class="cstat-no" title="statement not covered">      var serviceId = params[0].service;</span>
+<span class="cstat-no" title="statement not covered">      var characteristicId = params[0].characteristic;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      getCharacteristic(deviceId, serviceId, characteristicId).then(<span class="fstat-no" title="function not covered">function (characteristic, deviceName) {</span></span>
+<span class="cstat-no" title="statement not covered">        var descriptorIds = [];</span>
+<span class="cstat-no" title="statement not covered">        if (characteristic.getAllDescriptors) { // Phone</span>
+<span class="cstat-no" title="statement not covered">          var descriptors = characteristic.getAllDescriptors();</span>
+<span class="cstat-no" title="statement not covered">          for (var i = 0; i &lt; descriptors.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">            descriptorIds.push(descriptors[i].uuid.substring(4, 8));</span>
+          }
+        } else { // Client
+<span class="cstat-no" title="statement not covered">          var characteristicInfo = getCharacteristicsInfo(serviceId, characteristicId);</span>
+<span class="cstat-no" title="statement not covered">          for (var i = 0; i &lt; characteristicInfo.descriptors.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">            var descriptors = characteristic.getDescriptors(gatt.GattDescriptor.convertShortIdToUuid(characteristicInfo.descriptors[i]));</span>
+<span class="cstat-no" title="statement not covered">            for (var j = 0; j &lt; descriptors.length; j++) {</span>
+<span class="cstat-no" title="statement not covered">              descriptorIds.push(descriptors[j].uuid.substring(4, 8));</span>
+            }
+          }
+        }
+<span class="cstat-no" title="statement not covered">        successCallback({ status: "descriptors", descriptors: descriptorIds, characteristic: characteristicId, name: deviceName, service: serviceId, address: deviceId });</span>
+      }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">        errorCallback({ error: "descriptors", message: error });</span>
+      });
+    } else {
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "descriptors", message: "Invalid parameters." });</span>
+    }
+  },
+&nbsp;
+  read: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+<span class="cstat-no" title="statement not covered">    if (!initialized) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "read", message: "Not initialized." });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (params &amp;&amp; params.length &gt; 0 &amp;&amp; params[0].address &amp;&amp; params[0].service &amp;&amp; params[0].characteristic) {</span>
+<span class="cstat-no" title="statement not covered">      var deviceId = params[0].address;</span>
+<span class="cstat-no" title="statement not covered">      var serviceId = params[0].service;</span>
+<span class="cstat-no" title="statement not covered">      var characteristicId = params[0].characteristic;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      getCharacteristic(deviceId, serviceId, characteristicId).then(<span class="fstat-no" title="function not covered">function (characteristic, deviceName) {</span></span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">          characteristic.readValueAsync(bluetooth.BluetoothCacheMode.uncached).done(<span class="fstat-no" title="function not covered">function (result) {</span></span>
+<span class="cstat-no" title="statement not covered">            if (result.status == gatt.GattCommunicationStatus.success) {</span>
+<span class="cstat-no" title="statement not covered">              var value = wsc.CryptographicBuffer.encodeToBase64String(result.value);</span>
+<span class="cstat-no" title="statement not covered">              successCallback({ status: "read", value: value, characteristic: characteristicId, name: deviceName, service: serviceId, address: deviceId });</span>
+            } else {
+<span class="cstat-no" title="statement not covered">              errorCallback({ error: "read", message: "Device unreachable." });</span>
+            }
+          }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">            errorCallback({ error: "read", message: error.message });</span>
+          });
+        } catch (error) {
+<span class="cstat-no" title="statement not covered">          errorCallback({ error: "read", message: error.message });</span>
+        }
+      }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">        errorCallback({ error: "read", message: error });</span>
+      });
+    } else {
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "read", message: "Invalid parameters." });</span>
+    }
+  },
+&nbsp;
+  subscribe: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+<span class="cstat-no" title="statement not covered">    if (!initialized) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "subscribe", message: "Not initialized." });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (params &amp;&amp; params.length &gt; 0 &amp;&amp; params[0].address &amp;&amp; params[0].service &amp;&amp; params[0].characteristic &amp;&amp; params[0].isNotification != undefined) {</span>
+<span class="cstat-no" title="statement not covered">      var deviceId = params[0].address;</span>
+<span class="cstat-no" title="statement not covered">      var serviceId = params[0].service;</span>
+<span class="cstat-no" title="statement not covered">      var characteristicId = params[0].characteristic;</span>
+<span class="cstat-no" title="statement not covered">      var isNotification = params[0].isNotification;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      getCharacteristic(deviceId, serviceId, characteristicId).then(<span class="fstat-no" title="function not covered">function (characteristic, deviceName) {</span></span>
+<span class="cstat-no" title="statement not covered">        var descriptorValue;</span>
+<span class="cstat-no" title="statement not covered">        if (isNotification || isNotification == null) {</span>
+<span class="cstat-no" title="statement not covered">          descriptorValue = gatt.GattClientCharacteristicConfigurationDescriptorValue.notify;</span>
+        } else {
+<span class="cstat-no" title="statement not covered">          descriptorValue = gatt.GattClientCharacteristicConfigurationDescriptorValue.indicate;</span>
+        }
+<span class="cstat-no" title="statement not covered">        characteristic.writeClientCharacteristicConfigurationDescriptorAsync(descriptorValue).done(<span class="fstat-no" title="function not covered">function (result) {</span></span>
+<span class="cstat-no" title="statement not covered">          if (result == gatt.GattCommunicationStatus.success) {</span>
+<span class="cstat-no" title="statement not covered">            successCallback({ status: "subscribed", characteristic: characteristicId, name: deviceName, service: serviceId, address: deviceId }, { keepCallback: true });</span>
+<span class="cstat-no" title="statement not covered">            characteristic.onvaluechanged = <span class="fstat-no" title="function not covered">function (result) {</span></span>
+<span class="cstat-no" title="statement not covered">              var value = wsc.CryptographicBuffer.encodeToBase64String(result.characteristicValue);</span>
+<span class="cstat-no" title="statement not covered">              successCallback({ status: "subscribedResult", value: value, characteristic: characteristicId, name: deviceName, service: serviceId, address: deviceId }, { keepCallback: true });</span>
+            };
+          } else {
+<span class="cstat-no" title="statement not covered">            errorCallback({ error: "subscribe", message: "Device unreachable." });</span>
+          }
+        }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">          errorCallback({ error: "subscribe", message: error.message });</span>
+        });
+      }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">        errorCallback({ error: "subscribe", message: error });</span>
+      });
+    } else {
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "subscribe", message: "Invalid parameters." });</span>
+    }
+  },
+&nbsp;
+  unsubscribe: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+<span class="cstat-no" title="statement not covered">    if (!initialized) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "unsubscribe", message: "Not initialized." });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (params &amp;&amp; params.length &gt; 0 &amp;&amp; params[0].address &amp;&amp; params[0].service &amp;&amp; params[0].characteristic) {</span>
+<span class="cstat-no" title="statement not covered">      var deviceId = params[0].address;</span>
+<span class="cstat-no" title="statement not covered">      var serviceId = params[0].service;</span>
+<span class="cstat-no" title="statement not covered">      var characteristicId = params[0].characteristic;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      getCharacteristic(deviceId, serviceId, characteristicId).then(<span class="fstat-no" title="function not covered">function (characteristic, deviceName) {</span></span>
+<span class="cstat-no" title="statement not covered">        characteristic.onvaluechanged = null;</span>
+<span class="cstat-no" title="statement not covered">        characteristic.writeClientCharacteristicConfigurationDescriptorAsync(gatt.GattClientCharacteristicConfigurationDescriptorValue.none).done(<span class="fstat-no" title="function not covered">function (result) {</span></span>
+<span class="cstat-no" title="statement not covered">          if (result == gatt.GattCommunicationStatus.success) {</span>
+<span class="cstat-no" title="statement not covered">            successCallback({ status: "unsubscribed", characteristic: characteristicId, name: deviceName, service: serviceId, address: deviceId });</span>
+          } else {
+<span class="cstat-no" title="statement not covered">            errorCallback({ error: "unsubscribe", message: "Device unreachable." });</span>
+          }
+        }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">          errorCallback({ error: "unsubscribe", message: error.message });</span>
+        });
+      }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">        errorCallback({ error: "unsubscribe", message: error });</span>
+      });
+    } else {
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "unsubscribe", message: "Invalid parameters." });</span>
+    }
+  },
+&nbsp;
+  write: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+<span class="cstat-no" title="statement not covered">    if (!initialized) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "write", message: "Not initialized." });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (params &amp;&amp; params.length &gt; 0 &amp;&amp; params[0].address &amp;&amp; params[0].service &amp;&amp; params[0].characteristic &amp;&amp; params[0].value) {</span>
+<span class="cstat-no" title="statement not covered">      var deviceId = params[0].address;</span>
+<span class="cstat-no" title="statement not covered">      var serviceId = params[0].service;</span>
+<span class="cstat-no" title="statement not covered">      var characteristicId = params[0].characteristic;</span>
+<span class="cstat-no" title="statement not covered">      var value = params[0].value;</span>
+<span class="cstat-no" title="statement not covered">      var writeOption;</span>
+<span class="cstat-no" title="statement not covered">      if (params[0].type !== undefined &amp;&amp; params[0].type == "noResponse") {</span>
+<span class="cstat-no" title="statement not covered">          writeOption = gatt.GattWriteOption.writeWithoutResponse;</span>
+      } else {
+<span class="cstat-no" title="statement not covered">          writeOption = gatt.GattWriteOption.writeWithResponse;</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered">      getCharacteristic(deviceId, serviceId, characteristicId).then(<span class="fstat-no" title="function not covered">function (characteristic, deviceName) {</span></span>
+<span class="cstat-no" title="statement not covered">        var buffer = wsc.CryptographicBuffer.decodeFromBase64String(value);</span>
+<span class="cstat-no" title="statement not covered">        characteristic.writeValueAsync(buffer, writeOption).done(<span class="fstat-no" title="function not covered">function (result) {</span></span>
+<span class="cstat-no" title="statement not covered">          if (result == gatt.GattCommunicationStatus.success) {</span>
+<span class="cstat-no" title="statement not covered">            successCallback({ status: "written", characteristic: characteristicId, name: deviceName, service: serviceId, address: deviceId });</span>
+          } else {
+<span class="cstat-no" title="statement not covered">            errorCallback({ error: "write", message: "Device unreachable." });</span>
+          }
+        }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">          errorCallback({ error: "write", message: error.message });</span>
+        });
+      }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">        errorCallback({ error: "write", message: error });</span>
+      });
+    } else {
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "write", message: "Invalid parameters." });</span>
+    }
+  },
+&nbsp;
+  readDescriptor: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+<span class="cstat-no" title="statement not covered">    if (!initialized) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "readDescriptor", message: "Not initialized." });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (params &amp;&amp; params.length &gt; 0 &amp;&amp; params[0].address &amp;&amp; params[0].service &amp;&amp; params[0].characteristic &amp;&amp; params[0].descriptor) {</span>
+<span class="cstat-no" title="statement not covered">      var deviceId = params[0].address;</span>
+<span class="cstat-no" title="statement not covered">      var serviceId = params[0].service;</span>
+<span class="cstat-no" title="statement not covered">      var characteristicId = params[0].characteristic;</span>
+<span class="cstat-no" title="statement not covered">      var descriptorId = params[0].descriptor;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      getDescriptor(deviceId, serviceId, characteristicId, descriptorId).then(<span class="fstat-no" title="function not covered">function (descriptor, deviceName) {</span></span>
+<span class="cstat-no" title="statement not covered">        descriptor.readValueAsync(bluetooth.BluetoothCacheMode.uncached).done(<span class="fstat-no" title="function not covered">function (result) {</span></span>
+<span class="cstat-no" title="statement not covered">          if (result.status == gatt.GattCommunicationStatus.success) {</span>
+<span class="cstat-no" title="statement not covered">            var value = wsc.CryptographicBuffer.encodeToBase64String(result.value);</span>
+<span class="cstat-no" title="statement not covered">            successCallback({ status: "readDescriptor", value: value, descriptor: descriptorId, characteristic: characteristicId, name: deviceName, service: serviceId, address: deviceId });</span>
+          } else {
+<span class="cstat-no" title="statement not covered">            errorCallback({ error: "readDescriptor", message: "Device unreachable." });</span>
+          }
+        }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">          errorCallback({ error: "readDescriptor", message: error.message });</span>
+        });
+      }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">        errorCallback({ error: "readDescriptor", message: error });</span>
+      });
+    } else {
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "readDescriptor", message: "Invalid parameters." });</span>
+    }
+  },
+&nbsp;
+  writeDescriptor: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, params) {</span>
+<span class="cstat-no" title="statement not covered">    if (!initialized) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "writeDescriptor", message: "Not initialized." });</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (params &amp;&amp; params.length &gt; 0 &amp;&amp; params[0].address &amp;&amp; params[0].service &amp;&amp; params[0].characteristic &amp;&amp; params[0].descriptor &amp;&amp; params[0].value) {</span>
+<span class="cstat-no" title="statement not covered">      var deviceId = params[0].address;</span>
+<span class="cstat-no" title="statement not covered">      var serviceId = params[0].service;</span>
+<span class="cstat-no" title="statement not covered">      var characteristicId = params[0].characteristic;</span>
+<span class="cstat-no" title="statement not covered">      var descriptorId = params[0].descriptor;</span>
+<span class="cstat-no" title="statement not covered">      var value = params[0].value;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">      getDescriptor(deviceId, serviceId, characteristicId, descriptorId).then(<span class="fstat-no" title="function not covered">function (descriptor, deviceName) {</span></span>
+<span class="cstat-no" title="statement not covered">        var buffer = wsc.CryptographicBuffer.decodeFromBase64String(value);</span>
+<span class="cstat-no" title="statement not covered">        descriptor.writeValueAsync(buffer).done(<span class="fstat-no" title="function not covered">function (result) {</span></span>
+<span class="cstat-no" title="statement not covered">          if (result == gatt.GattCommunicationStatus.success) {</span>
+<span class="cstat-no" title="statement not covered">            successCallback({ status: "writeDescriptor", descriptor: descriptorId, characteristic: characteristicId, name: deviceName, service: serviceId, address: deviceId });</span>
+          } else {
+<span class="cstat-no" title="statement not covered">            errorCallback({ error: "writeDescriptor", message: "Device unreachable." });</span>
+          }
+        }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">          errorCallback({ error: "writeDescriptor", message: error.message });</span>
+        });
+      }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">        errorCallback({ error: "writeDescriptor", message: error });</span>
+      });
+    } else {
+<span class="cstat-no" title="statement not covered">      errorCallback({ error: "writeDescriptor", message: "Invalid parameters." });</span>
+    }
+  },
+&nbsp;
+  isInitialized: <span class="fstat-no" title="function not covered">function (successCallback, errorCallback, strInput) {</span>
+<span class="cstat-no" title="statement not covered">    successCallback({ isInitialized: initialized });</span>
+  },
+&nbsp;
+};
+&nbsp;
+<span class="fstat-no" title="function not covered">function getService(deviceId, serviceId) {</span>
+<span class="cstat-no" title="statement not covered">  return new WinJS.Promise(<span class="fstat-no" title="function not covered">function (successCallback, errorCallback, progressDispatch) {</span></span>
+<span class="cstat-no" title="statement not covered">    for (var i = 0; i &lt; cachedServices.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">      var service = cachedServices[i];</span>
+<span class="cstat-no" title="statement not covered">      if (service.deviceId == deviceId &amp;&amp; service.serviceId == serviceId) {</span>
+<span class="cstat-no" title="statement not covered">        successCallback(service.deviceService);</span>
+<span class="cstat-no" title="statement not covered">        return;</span>
+      }
+    }
+<span class="cstat-no" title="statement not covered">    if (serviceId.length == 4) {</span>
+<span class="cstat-no" title="statement not covered">        serviceId = "0000" + serviceId + "-0000-1000-8000-00805F9B34FB";</span>
+    }
+<span class="cstat-no" title="statement not covered">    var selector = "System.Devices.ContainerId:={" + deviceId + "} AND System.DeviceInterface.Bluetooth.ServiceGuid:=\"{" + serviceId + "}\" AND System.Devices.InterfaceClassGuid:=\"{6E3BB679-4372-40C8-9EAA-4509DF260CD8}\" AND System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True";</span>
+<span class="cstat-no" title="statement not covered">    deviceInfo.findAllAsync(selector, null).then(<span class="fstat-no" title="function not covered">function (services) {</span></span>
+<span class="cstat-no" title="statement not covered">      if (services.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">        gatt.GattDeviceService.fromIdAsync(services[0].id)</span>
+         .then(<span class="fstat-no" title="function not covered">function (deviceService) {</span>
+<span class="cstat-no" title="statement not covered">           if (deviceService) {</span>
+<span class="cstat-no" title="statement not covered">             cachedServices.push({ deviceId: deviceId, serviceId: serviceId, deviceService: deviceService });</span>
+<span class="cstat-no" title="statement not covered">             successCallback(deviceService);</span>
+           } else {
+<span class="cstat-no" title="statement not covered">             errorCallback("Error retrieving deviceService, check the app's permissions for this service (plugin.xml).");</span>
+           }
+         }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">           errorCallback(error);</span>
+         });
+      } else {
+<span class="cstat-no" title="statement not covered">        errorCallback("Device or service not found.");</span>
+      }
+    }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback(error);</span>
+    });
+  });
 }
-module.exports = bluetoothle;
+&nbsp;
+<span class="fstat-no" title="function not covered">function getCharacteristic(deviceId, serviceId, characteristicId) {</span>
+<span class="cstat-no" title="statement not covered">  return new WinJS.Promise(<span class="fstat-no" title="function not covered">function (successCallback, errorCallback, progressDispatch) {</span></span>
+<span class="cstat-no" title="statement not covered">    getService(deviceId, serviceId).then(<span class="fstat-no" title="function not covered">function (service) {</span></span>
+<span class="cstat-no" title="statement not covered">      var deviceName = service.name;</span>
+<span class="cstat-no" title="statement not covered">      if (characteristicId.length == 4) {</span>
+<span class="cstat-no" title="statement not covered">        characteristicId = gatt.GattCharacteristic.convertShortIdToUuid(parseInt("0x" + characteristicId, 16));</span>
+      }
+<span class="cstat-no" title="statement not covered">      var characteristics = service.getCharacteristics(characteristicId);</span>
+<span class="cstat-no" title="statement not covered">      if (characteristics.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">        successCallback(characteristics[0], deviceName);</span>
+      } else {
+<span class="cstat-no" title="statement not covered">        errorCallback("Characteristic not found.");</span>
+      }
+    }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback(error);</span>
+    });
+  });
+}
+&nbsp;
+<span class="fstat-no" title="function not covered">function getDescriptor(deviceId, serviceId, characteristicId, descriptorId) {</span>
+<span class="cstat-no" title="statement not covered">  return new WinJS.Promise(<span class="fstat-no" title="function not covered">function (successCallback, errorCallback, progressDispatch) {</span></span>
+<span class="cstat-no" title="statement not covered">    getCharacteristic(deviceId, serviceId, characteristicId).then(<span class="fstat-no" title="function not covered">function (characteristic, deviceName) {</span></span>
+<span class="cstat-no" title="statement not covered">      if (descriptorId.length == 4) {</span>
+<span class="cstat-no" title="statement not covered">        descriptorId = gatt.GattDescriptor.convertShortIdToUuid(parseInt("0x" + descriptorId, 16))</span>
+      }
+<span class="cstat-no" title="statement not covered">      var descriptors = characteristic.getDescriptors(descriptorId);</span>
+<span class="cstat-no" title="statement not covered">      if (descriptors.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">        successCallback(descriptors[0], deviceName);</span>
+      } else {
+<span class="cstat-no" title="statement not covered">        errorCallback("Descriptor not found.");</span>
+      }
+    }, <span class="fstat-no" title="function not covered">function (error) {</span>
+<span class="cstat-no" title="statement not covered">      errorCallback(error);</span>
+    });
+  });
+}
+&nbsp;
+<span class="fstat-no" title="function not covered">function convertCharacteristic(characteristic) {</span>
+<span class="cstat-no" title="statement not covered">  var char = { uuid: characteristic.uuid.substring(4, 8), properties: new Object() };</span>
+<span class="cstat-no" title="statement not covered">  if (characteristic.characteristicProperties &amp; 1) {</span>
+<span class="cstat-no" title="statement not covered">    char.properties.broadcast = "true";</span>
+  }
+<span class="cstat-no" title="statement not covered">  if (characteristic.characteristicProperties &amp; 2) {</span>
+<span class="cstat-no" title="statement not covered">    char.properties.read = "true";</span>
+  }
+<span class="cstat-no" title="statement not covered">  if (characteristic.characteristicProperties &amp; 4) {</span>
+<span class="cstat-no" title="statement not covered">    char.properties.writeWithoutResponse = "true";</span>
+  }
+<span class="cstat-no" title="statement not covered">  if (characteristic.characteristicProperties &amp; 8) {</span>
+<span class="cstat-no" title="statement not covered">    char.properties.write = "true";</span>
+  }
+<span class="cstat-no" title="statement not covered">  if (characteristic.characteristicProperties &amp; 16) {</span>
+<span class="cstat-no" title="statement not covered">    char.properties.notify = "true";</span>
+  }
+<span class="cstat-no" title="statement not covered">  if (characteristic.characteristicProperties &amp; 32) {</span>
+<span class="cstat-no" title="statement not covered">    char.properties.indicate = "true";</span>
+  }
+<span class="cstat-no" title="statement not covered">  if (characteristic.characteristicProperties &amp; 64) {</span>
+<span class="cstat-no" title="statement not covered">    char.properties.authenticatedSignedWrites = "true";</span>
+  }
+<span class="cstat-no" title="statement not covered">  if (characteristic.characteristicProperties &amp; 128) {</span>
+<span class="cstat-no" title="statement not covered">    char.properties.extendedProperties = "true";</span>
+  }
+<span class="cstat-no" title="statement not covered">  if (characteristic.characteristicProperties &amp; 256) {</span>
+<span class="cstat-no" title="statement not covered">    char.properties.reliableWrites = "true";</span>
+  }
+<span class="cstat-no" title="statement not covered">  if (characteristic.characteristicProperties &amp; 512) {</span>
+<span class="cstat-no" title="statement not covered">    char.properties.writableAuxilaries = "true";</span>
+  }
+<span class="cstat-no" title="statement not covered">  return char;</span>
+}
+&nbsp;
+<span class="fstat-no" title="function not covered">function getServiceInfo(serviceId) {</span>
+<span class="cstat-no" title="statement not covered">  var uuid = parseInt("0x" + serviceId, 16);</span>
+<span class="cstat-no" title="statement not covered">  var serviceInfos = getServiceInfos();</span>
+<span class="cstat-no" title="statement not covered">  for (var i = 0; i &lt; serviceInfos.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">    var serviceInfo = serviceInfos[i];</span>
+<span class="cstat-no" title="statement not covered">    if (serviceInfo.uuid == uuid) {</span>
+<span class="cstat-no" title="statement not covered">      return serviceInfo;</span>
+    }
+  }
+}
+&nbsp;
+<span class="fstat-no" title="function not covered">function getCharacteristicsInfo(serviceId, characteristicId) {</span>
+<span class="cstat-no" title="statement not covered">  var uuid = parseInt("0x" + characteristicId, 16);</span>
+<span class="cstat-no" title="statement not covered">  var service = getServiceInfo(serviceId);</span>
+<span class="cstat-no" title="statement not covered">  for (var i = 0; i &lt; service.characteristics.length; i++) {</span>
+<span class="cstat-no" title="statement not covered">    var characteristicInfo = service.characteristics[i];</span>
+<span class="cstat-no" title="statement not covered">    if (characteristicInfo.uuid == uuid) {</span>
+<span class="cstat-no" title="statement not covered">      return characteristicInfo;</span>
+    }
+  }
+}
+&nbsp;
+<span class="fstat-no" title="function not covered">function getServiceInfos() {</span>
+<span class="cstat-no" title="statement not covered">  return [</span>
+   {
+     uuid: 0x1811,
+     characteristics: [
+       { uuid: 0x2A47, descriptors: [] },
+       { uuid: 0x2A46, descriptors: [0x2902, ] },
+       { uuid: 0x2A48, descriptors: [] },
+       { uuid: 0x2A45, descriptors: [0x2902, ] },
+       { uuid: 0x2A44, descriptors: [] },
+     ]
+   },
+  {
+    uuid: 0x180F,
+    characteristics: [
+      { uuid: 0x2A19, descriptors: [0x2904, 0x2902, ] },
+    ]
+  },
+  {
+    uuid: 0x1810,
+    characteristics: [
+      { uuid: 0x2A35, descriptors: [0x2902, ] },
+      { uuid: 0x2A36, descriptors: [0x2902, ] },
+      { uuid: 0x2A49, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x181B,
+    characteristics: [
+      { uuid: 0x2A9B, descriptors: [] },
+      { uuid: 0x2A9C, descriptors: [0x2902, ] },
+    ]
+  },
+  {
+    uuid: 0x181E,
+    characteristics: [
+      { uuid: 0x2AA4, descriptors: [] },
+      { uuid: 0x2AA5, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x181F,
+    characteristics: [
+      { uuid: 0x2AA7, descriptors: [0x2902, ] },
+      { uuid: 0x2AA8, descriptors: [] },
+      { uuid: 0x2AA9, descriptors: [] },
+      { uuid: 0x2AAA, descriptors: [] },
+      { uuid: 0x2AAB, descriptors: [] },
+      { uuid: 0x2A52, descriptors: [0x2902, ] },
+      { uuid: 0x2AAC, descriptors: [0x2902, ] },
+    ]
+  },
+  {
+    uuid: 0x1805,
+    characteristics: [
+      { uuid: 0x2A2B, descriptors: [0x2902, ] },
+      { uuid: 0x2A0F, descriptors: [] },
+      { uuid: 0x2A14, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x1818,
+    characteristics: [
+      { uuid: 0x2A63, descriptors: [0x2902, 0x2903, ] },
+      { uuid: 0x2A65, descriptors: [] },
+      { uuid: 0x2A5D, descriptors: [] },
+      { uuid: 0x2A64, descriptors: [0x2902, ] },
+      { uuid: 0x2A66, descriptors: [0x2902, ] },
+    ]
+  },
+  {
+    uuid: 0x1816,
+    characteristics: [
+      { uuid: 0x2A5B, descriptors: [0x2902, ] },
+      { uuid: 0x2A5C, descriptors: [] },
+      { uuid: 0x2A5D, descriptors: [] },
+      { uuid: 0x2A55, descriptors: [0x2902, ] },
+    ]
+  },
+  {
+    uuid: 0x180A,
+    characteristics: [
+      { uuid: 0x2A29, descriptors: [] },
+      { uuid: 0x2A24, descriptors: [] },
+      { uuid: 0x2A25, descriptors: [] },
+      { uuid: 0x2A27, descriptors: [] },
+      { uuid: 0x2A26, descriptors: [] },
+      { uuid: 0x2A28, descriptors: [] },
+      { uuid: 0x2A23, descriptors: [] },
+      { uuid: 0x2A50, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x181A,
+    characteristics: [
+      { uuid: 0x2A7D, descriptors: [] },
+      { uuid: 0x2A73, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A72, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A7B, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A6C, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A74, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A7A, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A6F, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A77, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A75, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A78, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A6D, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A6E, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A71, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A70, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A76, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A79, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2AA3, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2A2C, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2AA0, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+      { uuid: 0x2AA1, descriptors: [0x290C, 0x290D, 0x290B, 0x2901, 0x2906, ] },
+    ]
+  },
+  {
+    uuid: 0x1800,
+    characteristics: [
+      { uuid: 0x2A00, descriptors: [] },
+      { uuid: 0x2A01, descriptors: [] },
+      { uuid: 0x2A02, descriptors: [] },
+      { uuid: 0x2A03, descriptors: [] },
+      { uuid: 0x2A04, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x1801,
+    characteristics: [
+      { uuid: 0x2A05, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x1808,
+    characteristics: [
+      { uuid: 0x2A18, descriptors: [0x2902, ] },
+      { uuid: 0x2A34, descriptors: [0x2902, ] },
+      { uuid: 0x2A51, descriptors: [] },
+      { uuid: 0x2A52, descriptors: [0x2902, ] },
+    ]
+  },
+  {
+    uuid: 0x1809,
+    characteristics: [
+      { uuid: 0x2A1C, descriptors: [0x2902, ] },
+      { uuid: 0x2A1D, descriptors: [] },
+      { uuid: 0x2A1E, descriptors: [0x2902, ] },
+      { uuid: 0x2A21, descriptors: [0x2902, 0x2906, ] },
+    ]
+  },
+  {
+    uuid: 0x180D,
+    characteristics: [
+      { uuid: 0x2A37, descriptors: [0x2902, ] },
+      { uuid: 0x2A38, descriptors: [] },
+      { uuid: 0x2A39, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x1812,
+    characteristics: [
+      { uuid: 0x2A4E, descriptors: [] },
+      { uuid: 0x2A4D, descriptors: [0x2902, 0x2908, ] },
+      { uuid: 0x2A4B, descriptors: [0x2907, ] },
+      { uuid: 0x2A22, descriptors: [0x2902, ] },
+      { uuid: 0x2A32, descriptors: [] },
+      { uuid: 0x2A33, descriptors: [0x2902, ] },
+      { uuid: 0x2A4A, descriptors: [] },
+      { uuid: 0x2A4C, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x1802,
+    characteristics: [
+      { uuid: 0x2A06, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x1820,
+    characteristics: [
+    ]
+  },
+  {
+    uuid: 0x1803,
+    characteristics: [
+      { uuid: 0x2A06, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x1819,
+    characteristics: [
+      { uuid: 0x2A6A, descriptors: [] },
+      { uuid: 0x2A67, descriptors: [0x2902, ] },
+      { uuid: 0x2A69, descriptors: [] },
+      { uuid: 0x2A6B, descriptors: [0x2902, ] },
+      { uuid: 0x2A68, descriptors: [0x2902, ] },
+    ]
+  },
+  {
+    uuid: 0x1807,
+    characteristics: [
+      { uuid: 0x2A11, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x180E,
+    characteristics: [
+      { uuid: 0x2A3F, descriptors: [0x2902, ] },
+      { uuid: 0x2A41, descriptors: [0x2902, ] },
+      { uuid: 0x2A40, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x1806,
+    characteristics: [
+      { uuid: 0x2A16, descriptors: [] },
+      { uuid: 0x2A17, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x1814,
+    characteristics: [
+      { uuid: 0x2A53, descriptors: [0x2902, ] },
+      { uuid: 0x2A54, descriptors: [] },
+      { uuid: 0x2A5D, descriptors: [] },
+      { uuid: 0x2A55, descriptors: [0x2902, ] },
+    ]
+  },
+  {
+    uuid: 0x1813,
+    characteristics: [
+      { uuid: 0x2A4F, descriptors: [] },
+      { uuid: 0x2A31, descriptors: [0x2902, ] },
+    ]
+  },
+  {
+    uuid: 0x1804,
+    characteristics: [
+      { uuid: 0x2A07, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x181C,
+    characteristics: [
+      { uuid: 0x2A8A, descriptors: [] },
+      { uuid: 0x2A90, descriptors: [] },
+      { uuid: 0x2A87, descriptors: [] },
+      { uuid: 0x2A80, descriptors: [] },
+      { uuid: 0x2A85, descriptors: [] },
+      { uuid: 0x2A8C, descriptors: [] },
+      { uuid: 0x2A98, descriptors: [] },
+      { uuid: 0x2A8E, descriptors: [] },
+      { uuid: 0x2A96, descriptors: [] },
+      { uuid: 0x2A8D, descriptors: [] },
+      { uuid: 0x2A92, descriptors: [] },
+      { uuid: 0x2A91, descriptors: [] },
+      { uuid: 0x2A7F, descriptors: [] },
+      { uuid: 0x2A83, descriptors: [] },
+      { uuid: 0x2A93, descriptors: [] },
+      { uuid: 0x2A86, descriptors: [] },
+      { uuid: 0x2A97, descriptors: [] },
+      { uuid: 0x2A8F, descriptors: [] },
+      { uuid: 0x2A88, descriptors: [] },
+      { uuid: 0x2A89, descriptors: [] },
+      { uuid: 0x2A7E, descriptors: [] },
+      { uuid: 0x2A84, descriptors: [] },
+      { uuid: 0x2A81, descriptors: [] },
+      { uuid: 0x2A82, descriptors: [] },
+      { uuid: 0x2A8B, descriptors: [] },
+      { uuid: 0x2A94, descriptors: [] },
+      { uuid: 0x2A95, descriptors: [] },
+      { uuid: 0x2A99, descriptors: [0x2902, ] },
+      { uuid: 0x2A9A, descriptors: [] },
+      { uuid: 0x2A9F, descriptors: [0x2902, ] },
+      { uuid: 0x2AA2, descriptors: [] },
+    ]
+  },
+  {
+    uuid: 0x181D,
+    characteristics: [
+      { uuid: 0x2A9E, descriptors: [] },
+      { uuid: 0x2A9D, descriptors: [0x2902, ] },
+    ]
+  },
+  // Medisana BS 430 Connect (Body Analysis Scale)
+  {
+    uuid: 0x78b2,
+    characteristics: [
+      { uuid: 0x8a20, descriptors: [] },
+      { uuid: 0x8a21, descriptors: [0x2902, ] },
+      { uuid: 0x8a22, descriptors: [0x2902, ] },
+      { uuid: 0x8a81, descriptors: [] },
+      { uuid: 0x8a82, descriptors: [0x2902, ] },
+    ]
+  }
+  // ---------------------------------------------
+  ];
+}
+&nbsp;
+<span class="cstat-no" title="statement not covered">require("cordova/exec/proxy").add("BluetoothLePlugin", module.exports);</span>
 &nbsp;
 &nbsp;</pre></td></tr>
 </tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Wed Apr 19 2017 01:31:34 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Thu Apr 27 2017 20:12:53 GMT+0000 (UTC)</div>
 </div>
 
 
