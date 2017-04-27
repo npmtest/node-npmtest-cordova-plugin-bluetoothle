@@ -1,6 +1,6 @@
 # npmtest-cordova-plugin-bluetoothle
 
-#### test coverage for  [cordova-plugin-bluetoothle (v4.3.2)](https://github.com/randdusing/cordova-plugin-bluetoothle#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-cordova-plugin-bluetoothle.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-cordova-plugin-bluetoothle) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-cordova-plugin-bluetoothle.svg)](https://travis-ci.org/npmtest/node-npmtest-cordova-plugin-bluetoothle)
+#### basic test coverage for  [cordova-plugin-bluetoothle (v4.3.3)](https://github.com/randdusing/cordova-plugin-bluetoothle#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-cordova-plugin-bluetoothle.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-cordova-plugin-bluetoothle) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-cordova-plugin-bluetoothle.svg)](https://travis-ci.org/npmtest/node-npmtest-cordova-plugin-bluetoothle)
 
 #### Use the Bluetooth Low Energy plugin to connect your Cordova app to new Bluetooth devices like heart rate monitors, thermometers, etc...
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-cordova-plugin-bluetoothle/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-cordova-plugin-bluetoothle/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-cordova-plugin-bluetoothle/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-cordova-plugin-bluetoothle/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-cordova-plugin-bluetoothle/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-cordova-plugin-bluetoothle/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-cordova-plugin-bluetoothle/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-cordova-plugin-bluetoothle/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-cordova-plugin-bluetoothle/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-cordova-plugin-bluetoothle/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-cordova-plugin-bluetoothle/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-cordova-plugin-bluetoothle/build/coverage.html/index.html)
 
@@ -55,8 +55,8 @@
     "devDependencies": {},
     "directories": {},
     "dist": {
-        "shasum": "80764a52e79876be8b674c1004e318c3101ad782",
-        "tarball": "https://registry.npmjs.org/cordova-plugin-bluetoothle/-/cordova-plugin-bluetoothle-4.3.2.tgz"
+        "shasum": "efdc9b795c7394164c43c1840029cb42561cc069",
+        "tarball": "https://registry.npmjs.org/cordova-plugin-bluetoothle/-/cordova-plugin-bluetoothle-4.3.3.tgz"
     },
     "engines": {
         "cordovaDependencies": {
@@ -69,7 +69,7 @@
             }
         }
     },
-    "gitHead": "1d70e127a8a8deba7fd0d802f93dd05dd79bc053",
+    "gitHead": "1e4681ea831ab89deec1a3823352cd355ee8d55b",
     "homepage": "https://github.com/randdusing/cordova-plugin-bluetoothle#readme",
     "keywords": [
         "bluetooth",
@@ -95,7 +95,8 @@
     },
     "scripts": {},
     "types": "./types/index.d.ts",
-    "version": "4.3.2"
+    "version": "4.3.3",
+    "bin": {}
 }
 ```
 
